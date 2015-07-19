@@ -1,0 +1,69 @@
+<html>
+<head>
+<script language="JavaScript" type="text/javascript">
+function button_onclick()
+{
+	var sum_html="";
+	var module_html="";
+	var title_html="";
+	var info_html="";
+	var posti="";
+	var textbox_index=0;
+	var check_index=0;
+	
+	title_html='<h1><font color="#696969">'+myForm.txt0.value+'</font></h1>';
+	
+	info_html='<table bgcolor="white" border="1" >';
+	for(check_index=0;check_index<myForm.info.length;check_index++){
+		if(myForm.info[check_index].checked==0)
+		info_html+="";
+		else
+		info_html+='<tr><td><font color="BLACK"><strong>'+myForm.info[check_index].value+'</strong></font></td><td>'+myForm.txt1[check_index].value+'</td></tr>';}
+		
+		info_html+='</table></br>';
+		
+		document.getElementById('content').innerHTML=title_html+info_html;
+						 
+	
+	for(check_index=0;check_index<myForm.module.length;check_index++){
+		if(myForm.module[check_index].checked==0)
+		module_html+="";
+		else
+		module_html+='<table bgcolor="BLACK" width="600px"><tr><td><font color="white">'+myForm.module[check_index].value+'</font></td></tr></table></br>';}
+		
+		document.getElementById('content').innerHTML=title_html+info_html+module_html;
+	
+	
+}
+
+</script>
+</head>
+<body>
+<form name ="myForm">
+title:<input type="text" name="txt0"></br>
+
+
+
+
+<input type="checkbox" name="module" value="INFO" />INFO<br />
+<input type="checkbox" name="module" value="VIEW" /> VIEW</br>
+
+<input type="checkbox" name="info" value="VALMISTAJA" />VALMISTAJA <input type="text" name="txt1"><br />
+<input type="checkbox" name="info" value="MALLI" />MALLI <input type="text" name="txt1"><br />
+<input type="checkbox" name="info" value="KUNTO" />KUNTO <input type="text" name="txt1"><br />
+<input type="checkbox" name="info" value="KOKO" />KOKO <input type="text" name="txt1"><br />
+<input type="checkbox" name="info" value="COLOR" />COLOR <input type="text" name="txt1"><BR/>
+
+<input type="button" name="btn" value="submit" onclick="button_onclick()">
+
+</form>
+<div id="sum">
+
+
+</div>
+<div id="content">
+
+
+</div>
+
+</body></html>
